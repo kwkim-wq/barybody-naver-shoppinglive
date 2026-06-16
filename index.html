@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네이버 쇼핑라이브 인크리멘탈 분석 — 회차별 모음</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f4f6f9;color:#1f2733;line-height:1.6;padding:0 0 80px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(135deg,#03c75a 0%,#02b350 60%,#00a046 100%);color:#fff;padding:50px 0 42px;margin-bottom:34px;box-shadow:0 6px 24px rgba(3,199,90,.25)}
+header .wrap h1{font-size:30px;font-weight:800;letter-spacing:-.5px}
+header .wrap p{opacity:.95;margin-top:8px;font-size:15px}
+h2{font-size:21px;font-weight:700;margin:42px 0 16px;padding-left:12px;border-left:4px solid #03c75a;color:#16202c}
+.summ{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:6px}
+.scard{background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:20px;box-shadow:0 2px 8px rgba(20,30,50,.04)}
+.scard .lab{font-size:13px;color:#6b7685}
+.scard .val{font-size:27px;font-weight:800;margin:6px 0 2px;color:#0a9b4a}
+.scard .sub{font-size:13px;color:#929cab}
+.lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.lcard{display:block;background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:18px 18px 16px;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(20,30,50,.04);transition:transform .12s,box-shadow .12s}
+.lcard:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(3,199,90,.16);border-color:#9fe0bb}
+.lc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.lc-date{font-size:20px;font-weight:800;color:#16202c}
+.lc-badge{font-size:12px;font-weight:700;color:#0a9b4a;background:#e7f8ee;padding:2px 9px;border-radius:20px}
+.lc-inc{font-size:23px;font-weight:800;color:#0a9b4a}
+.lc-inc small{font-size:12px;font-weight:600;color:#8b95a3;margin-left:2px}
+.lc-tot{font-size:13px;color:#6b7685;margin-top:2px}
+.lc-note{font-size:12px;color:#929cab;margin-top:8px;min-height:32px}
+.lc-go{font-size:13px;font-weight:700;color:#03c75a;margin-top:6px}
+.chart-box{background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:0 2px 8px rgba(20,30,50,.04)}
+.chart-box h4{font-size:14px;color:#6b7685;margin-bottom:14px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(20,30,50,.04)}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid #eef1f5}
+th{background:#f0f3f8;color:#5a6675;font-weight:600;font-size:13px}
+td.num{text-align:right;font-variant-numeric:tabular-nums} .up{color:#0a9b4a;font-weight:700}
+td a{color:#0a7d3c;text-decoration:none;font-weight:600} td a:hover{text-decoration:underline}
+.note{background:#fff;border:1px solid #e4e8ef;border-radius:12px;padding:18px 22px;font-size:14px;color:#4a5562;box-shadow:0 2px 8px rgba(20,30,50,.04)}
+.note b{color:#1f2733} ul{margin:8px 0 0 20px}li{margin:6px 0}
+footer{text-align:center;color:#9aa3b0;font-size:13px;margin-top:50px}
+.tbl-scroll{overflow-x:auto;border-radius:12px}
+@media(max-width:640px){.summ{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><div class="wrap">
+<h1>네이버 쇼핑라이브 인크리멘탈 분석</h1>
+<p>라이브 회차별 성과 모음 — 진행할 때마다 갱신 · 최종 업데이트 2026-06-15</p>
+</div></header>
+<div class="wrap">
+
+<div class="summ">
+<div class="scard"><div class="lab">진행 횟수</div><div class="val">5회</div><div class="sub">2026.04.30 ~ 06.15</div></div>
+<div class="scard"><div class="lab">누적 추가매출</div><div class="val">+55,143,705</div><div class="sub">라이브로 만든 순증 합계</div></div>
+<div class="scard"><div class="lab">회당 평균 추가매출</div><div class="val">+11,028,741</div><div class="sub">평소 대비 순증</div></div>
+</div>
+
+<h2>회차별 보고서 (클릭하면 상세)</h2>
+<div class="lgrid"><a class="lcard" href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-report/" target="_blank"><div class="lc-top"><span class="lc-date">4/30</span><span class="lc-badge">1회차</span></div><div class="lc-inc">+6,349,183<small>원 추가매출</small></div><div class="lc-tot">총 11,300,130원</div><div class="lc-note">21시 · 야간</div><div class="lc-go">상세 보고서 보기 →</div></a><a class="lcard" href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-report/" target="_blank"><div class="lc-top"><span class="lc-date">5/26</span><span class="lc-badge">2회차</span></div><div class="lc-inc">+8,370,613<small>원 추가매출</small></div><div class="lc-tot">총 13,321,560원</div><div class="lc-note">21시 · 야간</div><div class="lc-go">상세 보고서 보기 →</div></a><a class="lcard" href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-report/" target="_blank"><div class="lc-top"><span class="lc-date">6/1</span><span class="lc-badge">3회차</span></div><div class="lc-inc">+8,250,353<small>원 추가매출</small></div><div class="lc-tot">총 13,201,300원</div><div class="lc-note">21시 · 야간</div><div class="lc-go">상세 보고서 보기 →</div></a><a class="lcard" href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-0608/" target="_blank"><div class="lc-top"><span class="lc-date">6/8</span><span class="lc-badge">4회차</span></div><div class="lc-inc">+7,333,563<small>원 추가매출</small></div><div class="lc-tot">총 12,284,510원</div><div class="lc-note">21시 · 야간·루피취소 정정</div><div class="lc-go">상세 보고서 보기 →</div></a><a class="lcard" href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-0615/" target="_blank"><div class="lc-top"><span class="lc-date">6/15</span><span class="lc-badge">5회차</span></div><div class="lc-inc">+24,839,993<small>원 추가매출</small></div><div class="lc-tot">총 29,790,940원</div><div class="lc-note">오전 10~11시 · 오전·플친통합·역대최대</div><div class="lc-go">상세 보고서 보기 →</div></a></div>
+
+<h2>회차 비교 (추가매출 순)</h2>
+<div class="tbl-scroll"><table>
+<thead><tr><th>라이브</th><th class="num">총매출</th><th class="num">라이브직접</th><th class="num">광고</th><th class="num">오가닉</th><th class="num">추가매출</th></tr></thead>
+<tbody><tr><td><a href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-0615/" target="_blank">6/15 (5회차)</a></td><td class="num">29,790,940</td><td class="num">18,063,810</td><td class="num">7,823,370</td><td class="num">3,903,760</td><td class="num up">+24,839,993</td></tr><tr><td><a href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-report/" target="_blank">5/26 (2회차)</a></td><td class="num">13,321,560</td><td class="num">4,635,150</td><td class="num">5,290,100</td><td class="num">3,396,310</td><td class="num up">+8,370,613</td></tr><tr><td><a href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-report/" target="_blank">6/1 (3회차)</a></td><td class="num">13,201,300</td><td class="num">7,112,000</td><td class="num">3,698,000</td><td class="num">2,391,300</td><td class="num up">+8,250,353</td></tr><tr><td><a href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-0608/" target="_blank">6/8 (4회차)</a></td><td class="num">12,284,510</td><td class="num">5,977,110</td><td class="num">3,550,300</td><td class="num">2,757,100</td><td class="num up">+7,333,563</td></tr><tr><td><a href="https://kwkim-wq.github.io/barybody-naver-shoppinglive-report/" target="_blank">4/30 (1회차)</a></td><td class="num">11,300,130</td><td class="num">4,993,410</td><td class="num">4,174,200</td><td class="num">2,132,520</td><td class="num up">+6,349,183</td></tr></tbody></table></div>
+
+<h2>추이</h2>
+<div class="chart-box"><h4>회차별 추가매출(인크리멘탈)</h4><canvas id="c1" height="100"></canvas></div>
+<div class="chart-box"><h4>회차별 매출 구성 (라이브·광고·오가닉)</h4><canvas id="c2" height="100"></canvas></div>
+
+<h2>반복 확인된 패턴</h2>
+<div class="note"><ul>
+<li><b>플러스스토어 노출 확대는 5회 연속 재현</b> (홈 2.3~4.9배) — 라이브의 가장 확실한 부가효과.</li>
+<li><b>라이브 매출만 오르는 게 아님</b> — 라이브 직접매출을 빼도 광고·오가닉이 같이 상승. 광고비는 거의 안 늘어도 효율이 오름.</li>
+<li><b>회차별 동력은 조금씩 다름</b> — 1~3회차는 광고 효율 상승, 5회차(6/15)는 전 채널 폭발 + 브랜드검색 첫 반응(3.0배).</li>
+<li><b>잔존효과는 작거나 없음</b> — 보통 당일 집중. 6/8만 다음날 +54만 확인.</li>
+<li><b>노이즈 주의</b> — 6/8 루피 70개 대량취소(517만)·플친 발송 시점 같은 단발 이벤트는 분리해야 진짜 성과가 보임.</li>
+</ul></div>
+
+<footer>네이버 쇼핑라이브 인크리멘탈 분석 모음 · 마지막클릭 기준 · 6/8 루피취소 제외 정정 반영</footer>
+</div>
+<script>
+Chart.defaults.color='#6b7685';Chart.defaults.font.family="-apple-system,'Apple SD Gothic Neo',sans-serif";
+const grid={color:'#eef1f5'},M=v=>(v/1e6)+'M';
+const labels=["4/30", "5/26", "6/1", "6/8", "6/15"];
+new Chart(c1,{type:'bar',data:{labels,datasets:[{data:[6349183, 8370613, 8250353, 7333563, 24839993],backgroundColor:'#03c75a',borderRadius:6}]},options:{plugins:{legend:{display:false}},scales:{y:{grid,ticks:{callback:M}},x:{grid:{display:false}}}}});
+new Chart(c2,{type:'bar',data:{labels,datasets:[
+ {label:'라이브',data:[4993410.0, 4635150.0, 7112000.0, 5977110.0, 18063810.0],backgroundColor:'#ff7a6b',stack:'s'},
+ {label:'광고',data:[4174200.0, 5290100.0, 3698000.0, 3550300.0, 7823370.0],backgroundColor:'#03c75a',stack:'s'},
+ {label:'오가닉',data:[2132520.0, 3396310.0, 2391300.0, 2757100.0, 3903760.0],backgroundColor:'#5b9dff',stack:'s'}
+]},options:{plugins:{legend:{labels:{boxWidth:14}}},scales:{y:{stacked:true,grid,ticks:{callback:M}},x:{stacked:true,grid:{display:false}}}}});
+</script>
+</body></html>
